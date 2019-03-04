@@ -71,7 +71,7 @@ elif args["dataset"] in ["cat-dog" ,"Cat_dog","Cat-dog"]:
                    input_dim=10000,
                    output_dim=2,
                    momentum=0.1)
-        y_tr_one_hot = np.zeros((tr_label.shape[0], 10))
+        y_tr_one_hot = np.zeros((tr_label.shape[0], 2))
         for i in range(tr_label.shape[0]):
             y_tr_one_hot[i, tr_label[i]] = 1
         loss = net_4.fit_batch(tr_data, y_tr_one_hot,
