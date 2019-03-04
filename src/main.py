@@ -18,7 +18,7 @@ if not args["configuration"] is None:
     for i in range(len(args["configuration"])):
         if i==0:
             hidden_nodes.append(int(args["configuration"][0][1:]))
-        elif i == len((args["configuration"])-1):
+        elif i == (len(args["configuration"])-1):
             hidden_nodes.append(int(args["configuration"][i][:-1]))
         else:
             hidden_nodes.append(int(args["configuration"][i]))
