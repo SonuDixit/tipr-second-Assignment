@@ -76,7 +76,10 @@ class NN:
 
     def fit_batch(self, input_x, y_train, epochs=1, lr=0.01, batch_size=1):
         assert input_x.shape[0] == y_train.shape[0], "equal train data not passed"
-        assert input_x.shape[0] % batch_size == 0, "batch_size must divide num_train_examples, please change it in main file"
+        # assert input_x.shape[0] % batch_size == 0, "batch_size must divide num_train_examples, please change it in main file"
+        if input_x.shape[0] % batch_size != 0:
+            print("changing batch_size = 1")
+            batch_size = 1
         losses = []
         t = np.hstack((input_x,y_train))
         np.random.shuffle(t)
